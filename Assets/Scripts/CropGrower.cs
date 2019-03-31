@@ -76,6 +76,28 @@ public class CropGrower : MonoBehaviour
                 cropsReady.SetActive(false);
                 isGrowing = true;
             }
+
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                if (cropsAreReady && !player.hasHarvested) // Plot will  be reset
+                {
+                    aud.Play();
+
+                    cropsGrowing.SetActive(false);
+                    cropsReady.SetActive(false);
+                    cropsAreReady = false;
+                    player.hasHarvested = true;
+                    crop.enabled = true;
+
+                    return;
+                }
+                else if (_growDuration == growDuration && !player.hasHarvested) // Crops will start to grow
+                {
+                    cropsGrowing.SetActive(true);
+                    cropsReady.SetActive(false);
+                    isGrowing = true;
+                }
+            }
         }
     }
 }
