@@ -2,22 +2,16 @@
 
 public class SpiritCollector : MonoBehaviour
 {
-    public FirstPlayer player;
+    public Player player;
     public SpriteRenderer crop;
     public AudioSource deliverSound;
     public Canvas winScreen;
 
-    public int foodPoints;
-
-
-    /*
-     * Negeer dit, dit is bedoeld voor affinity
-     * public SpriteRenderer[] hearts;
-    */
+    public static int foodPoints;
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (Input.GetKeyDown(KeyCode.E) && collider.CompareTag("Player1") && player.hasHarvested)
+        if (Input.GetKeyDown(KeyCode.E) && collider.CompareTag("Player") && player.hasHarvested)
         {
             player.hasHarvested = false;
             crop.enabled = false;

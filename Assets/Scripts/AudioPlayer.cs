@@ -6,7 +6,7 @@ public class AudioPlayer : MonoBehaviour
     public AudioClip clip;
 
     [Tooltip("Usually meant for music.")]
-    public bool playMusicOnStart;
+    public bool playAudioOnStart;
 
 
     void Awake()
@@ -19,7 +19,7 @@ public class AudioPlayer : MonoBehaviour
     {
         aud.clip = clip;
 
-        if (playMusicOnStart)
+        if (playAudioOnStart)
         {
             aud.Play();
         }

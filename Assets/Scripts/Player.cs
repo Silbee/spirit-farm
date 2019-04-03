@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FirstPlayer : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public bool hasHarvested;

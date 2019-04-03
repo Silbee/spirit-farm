@@ -2,28 +2,20 @@
 
 public class CropGrower : MonoBehaviour
 {
-    public FirstPlayer player;
-    public SpriteRenderer crop;
+    public SpriteRenderer crop, cropGrowing, cropReady;
 
     public float growDuration = 3;
     float _growDuration;
 
     bool isGrowing, cropsAreReady;
 
-    public GameObject cropsGrowing, cropsReady;
-
-    /*
-     * De bedoeling is dat als je meerdere gewas-stages hebt en dat ie door elke stage loopt
-     * 
-     * [Tooltip("The first index is considered the first stage and the last index the last stage.")]
-     * public GameObject[] cropStages; 
-    */
-
+    Player player;
     AudioSource aud;
 
 
     void Awake()
     {
+        player = GameObject.Find("Player").GetComponent<Player>();
         aud = GetComponent<AudioSource>();
     }
 
@@ -40,8 +32,8 @@ public class CropGrower : MonoBehaviour
         {
             if (_growDuration <= 0) // Crops are done growing
             {
-                cropsGrowing.SetActive(false);
-                cropsReady.SetActive(true);
+                cropGrowing.enabled = false;
+                cropReady.enabled = true;
                 isGrowing = false;
                 cropsAreReady = true;
 
@@ -62,8 +54,8 @@ public class CropGrower : MonoBehaviour
             {
                 aud.Play();
 
-                cropsGrowing.SetActive(false);
-                cropsReady.SetActive(false);
+                cropGrowing.enabled = false;
+                cropReady.enabled = false;
                 cropsAreReady = false;
                 player.hasHarvested = true;
                 crop.enabled = true;
@@ -72,31 +64,27 @@ public class CropGrower : MonoBehaviour
             }
             else if (_growDuration == growDuration && !player.hasHarvested) // Crops will start to grow
             {
-                cropsGrowing.SetActive(true);
-                cropsReady.SetActive(false);
+                cropGrowing.enabled = true;
+                cropReady.enabled = false;
                 isGrowing = true;
             }
-
-            if (Input.GetKeyDown(KeyCode.O))
+            else if(cropsAreReady && !player.hasHarvested) // Plot will  be reset
             {
-                if (cropsAreReady && !player.hasHarvested) // Plot will  be reset
-                {
-                    aud.Play();
+                aud.Play();
 
-                    cropsGrowing.SetActive(false);
-                    cropsReady.SetActive(false);
-                    cropsAreReady = false;
-                    player.hasHarvested = true;
-                    crop.enabled = true;
+                cropGrowing.enabled = false;
+                cropReady.enabled = false;
+                cropsAreReady = false;
+                player.hasHarvested = true;
+                crop.enabled = true;
 
-                    return;
-                }
-                else if (_growDuration == growDuration && !player.hasHarvested) // Crops will start to grow
-                {
-                    cropsGrowing.SetActive(true);
-                    cropsReady.SetActive(false);
-                    isGrowing = true;
-                }
+                return;
+            }
+            else if(_growDuration == growDuration && !player.hasHarvested) // Crops will start to grow
+            {
+                cropGrowing.enabled = true;
+                cropReady.enabled = false;
+                isGrowing = true;
             }
         }
     }
