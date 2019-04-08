@@ -4,23 +4,30 @@ public class SpiritCollector : MonoBehaviour
 {
     public Player player;
     public SpriteRenderer crop;
-    public AudioSource deliverSound;
-    public Canvas winScreen;
 
     public static int foodPoints;
+
+    AudioSource aud;
+
+
+    void Awake()
+    {
+        aud = GetComponent<AudioSource>();    
+    }
+
 
     void OnTriggerStay2D(Collider2D collider)
     {
         if (Input.GetKeyDown(KeyCode.E) && collider.CompareTag("Player") && player.hasHarvested)
         {
             player.hasHarvested = false;
-            crop.enabled = false;
-            deliverSound.Play();
+            player.crop.enabled = false;
+            aud.Play();
             foodPoints++;
 
             if(foodPoints >= 5)
-            {   
-                winScreen.enabled = true;
+            {
+                print("Game has been won.");
             }
         }
     }

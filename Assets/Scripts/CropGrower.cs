@@ -2,9 +2,13 @@
 
 public class CropGrower : MonoBehaviour
 {
-    public SpriteRenderer crop, cropGrowing, cropReady;
+    public enum Crop { Strawberry, Rice, Potato };
+    public Crop crop;
 
-    public float growDuration = 3;
+    public float growDuration = 3F;
+
+    public SpriteRenderer cropGrowing, cropReady;
+
     float _growDuration;
 
     bool isGrowing, cropsAreReady;
@@ -46,7 +50,7 @@ public class CropGrower : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collider)
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -57,8 +61,8 @@ public class CropGrower : MonoBehaviour
                 cropGrowing.enabled = false;
                 cropReady.enabled = false;
                 cropsAreReady = false;
+                player.crop.enabled = true;
                 player.hasHarvested = true;
-                crop.enabled = true;
 
                 return;
             }
@@ -76,7 +80,6 @@ public class CropGrower : MonoBehaviour
                 cropReady.enabled = false;
                 cropsAreReady = false;
                 player.hasHarvested = true;
-                crop.enabled = true;
 
                 return;
             }

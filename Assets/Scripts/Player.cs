@@ -4,6 +4,7 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public bool hasHarvested;
+    public SpriteRenderer crop;
     public GameObject left, right, front, back;
 
     Vector2 moveInput;
