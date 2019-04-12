@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject Music;
     void Start()
     {
         
@@ -18,4 +19,13 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void MuteMusic()
+    {
+        Music.SetActive(false);
+    }
 }
