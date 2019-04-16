@@ -8607,7 +8607,6 @@ GameObject:
   m_Component:
   - component: {fileID: 559851998}
   - component: {fileID: 559852000}
-  - component: {fileID: 559851999}
   - component: {fileID: 559852001}
   m_Layer: 0
   m_Name: Audio Manager
@@ -8630,20 +8629,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &559851999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559851997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe655fb12a074044eb6ba9cb675cb25b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: e6e09f09781596642a99bb74fd08ad83, type: 3}
-  playAudioOnStart: 1
 --- !u!82 &559852000
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8654,7 +8639,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6f1480f374f49244ea1f167ba274d697, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -9022,7 +9007,6 @@ GameObject:
   - component: {fileID: 668728417}
   - component: {fileID: 668728421}
   - component: {fileID: 668728420}
-  - component: {fileID: 668728419}
   - component: {fileID: 668728418}
   m_Layer: 0
   m_Name: Plot 2
@@ -9063,20 +9047,6 @@ MonoBehaviour:
   growDuration: 3
   cropGrowing: {fileID: 1450110060}
   cropReady: {fileID: 1636396118}
---- !u!114 &668728419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668728416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe655fb12a074044eb6ba9cb675cb25b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 08b480ec7b5d45749a48c9c910e73ffc, type: 3}
-  playAudioOnStart: 0
 --- !u!82 &668728420
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9087,8 +9057,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 08b480ec7b5d45749a48c9c910e73ffc, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
@@ -10376,7 +10346,6 @@ GameObject:
   - component: {fileID: 1196071945}
   - component: {fileID: 1196071949}
   - component: {fileID: 1196071948}
-  - component: {fileID: 1196071947}
   - component: {fileID: 1196071946}
   m_Layer: 0
   m_Name: Plot 1
@@ -10417,20 +10386,6 @@ MonoBehaviour:
   growDuration: 3
   cropGrowing: {fileID: 2070251006}
   cropReady: {fileID: 2032578045}
---- !u!114 &1196071947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196071944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe655fb12a074044eb6ba9cb675cb25b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 08b480ec7b5d45749a48c9c910e73ffc, type: 3}
-  playAudioOnStart: 0
 --- !u!82 &1196071948
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10441,8 +10396,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 08b480ec7b5d45749a48c9c910e73ffc, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
