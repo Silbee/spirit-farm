@@ -5,7 +5,7 @@ public class Quest : ScriptableObject
 {
     public string questName = "Quest Name", questDescription = "Quest Description";
 
-    public enum Crop { Strawberry, Rice, Potato };
+    public enum Crop { Strawberry, Potato, Eggplant};
     public Crop crop;
 
     public int amountToHarvest = 3;

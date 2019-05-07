@@ -3,16 +3,20 @@
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
-    public bool hasHarvested;
-    public SpriteRenderer crop;
-    public GameObject left, right, front, back;
+
+    public static int foodPoints;
+    public static bool hasHarvested;
+    
+    public Sprite playerUp, playerDown, playerLeft, playerRight;
 
     Vector2 moveInput;
+    SpriteRenderer playerSprite;
     Rigidbody2D rigidBody;
 
 
     void Awake()
     {
+        playerSprite = GetComponent<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
@@ -21,35 +25,22 @@ public class Player : MonoBehaviour
     {
         moveInput = new Vector2(Input.GetAxisRaw("FirstHorizontal"), Input.GetAxisRaw("FirstVertical")).normalized;
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.S))
         {
-            left.SetActive(true);
-            right.SetActive(false);
-            front.SetActive(false);
-            back.SetActive(false);
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            left.SetActive(false);
-            right.SetActive(true);
-            front.SetActive(false);
-            back.SetActive(false);
+            playerSprite.sprite = playerDown;
         }
         else if (Input.GetKey(KeyCode.W))
         {
-            left.SetActive(false);
-            right.SetActive(false);
-            front.SetActive(false);
-            back.SetActive(true);
+            playerSprite.sprite = playerUp;
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKey(KeyCode.D))
         {
-            left.SetActive(false);
-            right.SetActive(false);
-            front.SetActive(true);
-            back.SetActive(false);
+            playerSprite.sprite = playerRight;
         }
-
+        else if (Input.GetKey(KeyCode.A))
+        {
+            playerSprite.sprite = playerLeft;
+        }
     }
 
 

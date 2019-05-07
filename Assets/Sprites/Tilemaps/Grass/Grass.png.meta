@@ -1,23 +1,45 @@
 fileFormatVersion: 2
-guid: f83ee8d5a26c2ed478cab46246fbf85e
+guid: 79678ae857c319140847e5b56737f22e
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Grass_0
-    21300002: Grass_1
-    21300004: Grass_2
-    21300006: Grass_3
-    21300008: Grass_4
-    21300010: Grass_5
-    21300012: Grass_6
-    21300014: Grass_7
-    21300016: Grass_8
-    21300018: Grass_9
-    21300020: Grass_10
-    21300022: Grass_11
-    21300024: Grass_12
-    21300026: Grass_13
+  internalIDToNameTable:
+  - first:
+      213: -4697008471758923472
+    second: DirtGrass_0
+  - first:
+      213: 7282914343675118150
+    second: DirtGrass_1
+  - first:
+      213: 6600888446336316906
+    second: DirtGrass_2
+  - first:
+      213: 7339700331222348447
+    second: DirtGrass_3
+  - first:
+      213: -1698249672851739292
+    second: DirtGrass_4
+  - first:
+      213: 6678203265620221722
+    second: DirtGrass_5
+  - first:
+      213: -4059124857103338683
+    second: DirtGrass_6
+  - first:
+      213: -8288609992229722384
+    second: DirtGrass_7
+  - first:
+      213: 3335231716531054966
+    second: DirtGrass_8
+  - first:
+      213: -7085886412559498679
+    second: DirtGrass_9
+  - first:
+      213: 2308475063555740852
+    second: DirtGrass_10
+  - first:
+      213: -7935573361579353186
+    second: DirtGrass_11
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -109,47 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grass_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b32a72d7cbedf140b8c8db8cadcac83
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be30cda73efe6f844b3512fb283ece77
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grass_2
+      name: DirtGrass_0
       rect:
         serializedVersion: 2
         x: 0
@@ -163,13 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9002487aa04afce45a0eceb05600a923
+      spriteID: bd757c3c530c968488a6bef1654234e2
+      internalID: -4697008471758923472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_3
+      name: DirtGrass_1
       rect:
         serializedVersion: 2
         x: 16
@@ -183,13 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 133e3cc40bdb58f4685b695dd44431ec
+      spriteID: 151f9005801506249922c4d4404b2f7d
+      internalID: 7282914343675118150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_4
+      name: DirtGrass_2
       rect:
         serializedVersion: 2
         x: 32
@@ -203,13 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff3e60e90accda64f875beb3fdd9f88f
+      spriteID: 4b325d0b8df6e5e40a01401e32f563d8
+      internalID: 6600888446336316906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_5
+      name: DirtGrass_3
       rect:
         serializedVersion: 2
         x: 48
@@ -223,13 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca77606abae68dc45be49b0af9c7ccb9
+      spriteID: 9072d7c4803d86d4e8b639b257059ed3
+      internalID: 7339700331222348447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_6
+      name: DirtGrass_4
       rect:
         serializedVersion: 2
         x: 0
@@ -243,13 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f840065b0ffd9e4fa4ec99343fe5f54
+      spriteID: 8638a5e576906a1409dfbb260e4db77d
+      internalID: -1698249672851739292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_7
+      name: DirtGrass_5
       rect:
         serializedVersion: 2
         x: 48
@@ -263,13 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fff03dc5de34c124d9ff444d6a77fd16
+      spriteID: c394059a683a2d2429248885ead7bcd7
+      internalID: 6678203265620221722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_8
+      name: DirtGrass_6
       rect:
         serializedVersion: 2
         x: 0
@@ -283,13 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0abebace2cbc2964cb85554ebcca609e
+      spriteID: 33314ed85fc9c4146b3ff9e1f4968a82
+      internalID: -4059124857103338683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_9
+      name: DirtGrass_7
       rect:
         serializedVersion: 2
         x: 48
@@ -303,13 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fa0e96c23436044389a141e647457e1
+      spriteID: c5f6471ce18ef544fb59656dcec74a0a
+      internalID: -8288609992229722384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_10
+      name: DirtGrass_8
       rect:
         serializedVersion: 2
         x: 0
@@ -323,13 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cdd0abc9bcaf90468b4f58e8c8e9ead
+      spriteID: be8d45762fe63124193fb26ad25425b1
+      internalID: 3335231716531054966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_11
+      name: DirtGrass_9
       rect:
         serializedVersion: 2
         x: 16
@@ -343,13 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f74bb2789aff3e4196a897f533baefa
+      spriteID: 75f9f6f1a3958f2468fac89cf9e3f1f6
+      internalID: -7085886412559498679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_12
+      name: DirtGrass_10
       rect:
         serializedVersion: 2
         x: 32
@@ -363,13 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8c99aa250048c546a27a8d84e1b6133
+      spriteID: 14301a102abfa314ba22bd8c5733c703
+      internalID: 2308475063555740852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass_13
+      name: DirtGrass_11
       rect:
         serializedVersion: 2
         x: 48
@@ -383,7 +376,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c9cf90b546b8b044a8885156c22dab1
+      spriteID: 3d9665b338d09144db17b0c763bd6e08
+      internalID: -7935573361579353186
       vertices: []
       indices: 
       edges: []
@@ -391,11 +385,13 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6e6c687eb79fb214a9c7c7c4a033e3e8
+    spriteID: ef20967f667b8fb4e9e04626874089cc
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
