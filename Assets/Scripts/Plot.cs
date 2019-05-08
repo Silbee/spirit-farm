@@ -16,7 +16,7 @@ public class Plot : MonoBehaviour
     public Sprite[] plantStages;
     
     int cropIndex;
-    bool cropsAreGrowing, cropsAreReady;
+    bool cropsAreGrowing, cropsAreReady, interactable;
     
     SpriteRenderer plotSprite;
     AudioSource audioSource;
@@ -29,9 +29,27 @@ public class Plot : MonoBehaviour
     }
 
 
-    void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (collider.CompareTag("Player"))
+        {
+            interactable = true;
+        }
+    }
+
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            interactable = false;
+        }
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && interactable)
         {
             if (!cropsAreGrowing && !cropsAreReady && !Player.hasHarvested)
             {
@@ -45,21 +63,17 @@ public class Plot : MonoBehaviour
 
                 switch (cropType)
                 {
-                    case (Crop.Strawberry):
-                        inventory.crops[0].cropAmount++;
+                    case Crop.Strawberry:
                         inventory.currentCropImage.sprite = inventory.crops[0].cropSprite;
                         break;
-                    case (Crop.Potato):
-                        inventory.crops[1].cropAmount++;
+                    case Crop.Potato:
                         inventory.currentCropImage.sprite = inventory.crops[1].cropSprite;
                         break;
-                    case (Crop.Eggplant):
-                        inventory.crops[2].cropAmount++;
+                    case Crop.Eggplant:
                         inventory.currentCropImage.sprite = inventory.crops[2].cropSprite;
                         break;
                 }
 
-                inventory.UpdateText();
                 Player.hasHarvested = true;
                 cropsAreReady = false;
                 plotSprite.sprite = null;

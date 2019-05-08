@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cropcrafting
   m_EditorClassIdentifier: 
   questName: Cropcrafting
-  questDescription: Im hungry, bring me 3 strawberries!
+  questDescription: I'm hungry, bring me 3 strawberries!
   cropsToTurnIn:
   - cropType: 0
     amount: 3
@@ -21,4 +21,4 @@ MonoBehaviour:
     amount: 0
   - cropType: 2
     amount: 0
-  questCompleted: 1
+  questCompleted: 0

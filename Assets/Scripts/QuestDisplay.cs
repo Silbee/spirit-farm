@@ -4,7 +4,11 @@ using TMPro;
 public class QuestDisplay : MonoBehaviour
 {
     public Quest quest;
+    public GameHandler game;
     public Inventory inventory;
+    public CommonFunctions functions;
+
+    public SpriteRenderer playerHat;
 
     public Canvas questTab;
     public TMP_Text questNameText, questDescriptionText, questCompletedText;
@@ -16,14 +20,10 @@ public class QuestDisplay : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            questNameText.text = quest.questName;
-            questDescriptionText.text = quest.questDescription;
+            UpdateText();
 
-            questTab.enabled = true;
+            functions.DisplayCanvas(questTab);
             interactable = true;
-
-            //Text is zichtbaar wanneer questCompleted, anders niet
-            questCompletedText.enabled = quest.questCompleted ? true : false;
         }
     }
 
@@ -32,7 +32,7 @@ public class QuestDisplay : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            questTab.enabled = false;
+            functions.CloseCanvas(questTab);
             interactable = false;
         }
     }
@@ -42,22 +42,40 @@ public class QuestDisplay : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && interactable && !quest.questCompleted)
         {
-            if (TurnInQuest())
+            if (CanTurnInQuest())
             {
                 quest.questCompleted = true;
+                UpdateText();
+
+                if (game.CheckQuestCompletion())
+                {
+                    playerHat.enabled = true;
+                }
             }
         }
     }
 
 
-    bool TurnInQuest()
+    void UpdateText()
+    {
+        questNameText.text = quest.questName;
+        questDescriptionText.text = quest.questDescription;
+
+        questCompletedText.enabled = quest.questCompleted ? true : false;
+
+        if (quest.questCompleted)
+            questDescriptionText.fontStyle = FontStyles.Strikethrough;
+        else
+            questDescriptionText.fontStyle = FontStyles.Normal;
+    }
+
+
+    bool CanTurnInQuest()
     {
         for (int i = 0; i < inventory.crops.Length; i++)
         {
             if (inventory.crops[i].cropAmount < quest.cropsToTurnIn[i].amount)
             {
-                print("Terminated at loop " + (i + 1));
-                print(false);
                 return false;
             }
         }
@@ -66,9 +84,8 @@ public class QuestDisplay : MonoBehaviour
         {
             inventory.crops[i].cropAmount -= quest.cropsToTurnIn[i].amount;
         }
-        print("Quest complete!");
-        print(true);
 
+        UpdateText();
         inventory.UpdateText();
         return true;
     }

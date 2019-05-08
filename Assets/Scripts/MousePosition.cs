@@ -2,14 +2,17 @@
 
 public class MousePosition : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
-    public Sprite mouseClickSprite, mouseIdleSprite;
+    public Sprite mouseIdleSprite, mouseClickSprite;
+
+    SpriteRenderer cursorSprite;
 
 
     void Start()
     {
         Cursor.visible = false;
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        cursorSprite = GetComponent<SpriteRenderer>();
+
+        cursorSprite.sprite = mouseIdleSprite;
     }
 
 
@@ -20,11 +23,11 @@ public class MousePosition : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            spriteRenderer.sprite = mouseClickSprite;
+            cursorSprite.sprite = mouseClickSprite;
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            spriteRenderer.sprite = mouseIdleSprite;
+            cursorSprite.sprite = mouseIdleSprite;
         }
     }
 }

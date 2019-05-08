@@ -22,8 +22,7 @@ public class InventorySlots
 public class Inventory : MonoBehaviour
 {
     public InventorySlots[] crops;
-
-    public Canvas inventoryCanvas;
+    
     public Image currentCropImage;
 
 
@@ -33,17 +32,26 @@ public class Inventory : MonoBehaviour
     }
 
 
-    public void ToggleInventory()
-    {
-        inventoryCanvas.enabled = !inventoryCanvas.enabled;
-    }
-
-
     public void UpdateText()
     {
         for (int i = 0; i < crops.Length; i++)
         {
             crops[i].cropCounterText.text = "x " + crops[i].cropAmount;
         }
+    }
+
+
+    public void AddCrop()
+    {
+        for (int i = 0; i < crops.Length; i++)
+        {
+            if (currentCropImage.sprite == crops[i].cropSprite)
+            {
+                crops[i].cropAmount++;
+            }
+        }
+
+        currentCropImage.enabled = false;
+        UpdateText();
     }
 }

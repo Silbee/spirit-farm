@@ -2,9 +2,9 @@
 
 public class Spirit : MonoBehaviour
 {
-    public Quest questGiven;
-
     public Inventory inventory;
+    
+    bool interactable;
 
     AudioSource audioSource;
 
@@ -15,12 +15,30 @@ public class Spirit : MonoBehaviour
     }
 
 
-    void OnTriggerStay2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (Input.GetKeyDown(KeyCode.E) && collider.CompareTag("Player") && Player.hasHarvested)
+        if (collider.CompareTag("Player"))
+        {
+            interactable = true;
+        }
+    }
+
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            interactable = false;
+        }
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && Player.hasHarvested && interactable)
         {
             Player.hasHarvested = false;
-            inventory.currentCropImage.enabled = false;
+            inventory.AddCrop();
             audioSource.Play();
         }
     }

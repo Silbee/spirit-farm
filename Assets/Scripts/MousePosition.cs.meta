@@ -3,7 +3,9 @@ guid: 61c9ddb0930334144a4295f0fff80c42
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mouseClickSprite: {fileID: 21300000, guid: 8a1045fb8de80754f9c5cfc4bd5c18d6, type: 3}
+  - mouseIdleSprite: {fileID: 21300000, guid: 7a5458e82dacd6f4ba9307686637e7f6, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

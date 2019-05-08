@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpiritsAssistant
   m_EditorClassIdentifier: 
   questName: Spirit's Assistant
-  questDescription: My eating habits are wierd so I would like 2 egglants!
+  questDescription: My eating habits are wierd so I would like 2 eggplants!
   cropsToTurnIn:
   - cropType: 0
     amount: 0
