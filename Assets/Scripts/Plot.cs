@@ -3,16 +3,21 @@ using System.Collections;
 
 public class Plot : MonoBehaviour
 {
-    public Inventory inventory;
+    public enum Crop
+    {
+        Strawberry,
+        Potato,
+        Eggplant
+    };
+    public Crop cropType;
 
-    public enum Crop { Strawberry, Potato, Eggplant };
-    public Crop cropToHarvest;
+    public Inventory inventory;
 
     public Sprite[] plantStages;
     
     int cropIndex;
     bool cropsAreGrowing, cropsAreReady;
-
+    
     SpriteRenderer plotSprite;
     AudioSource audioSource;
 
@@ -30,7 +35,6 @@ public class Plot : MonoBehaviour
         {
             if (!cropsAreGrowing && !cropsAreReady && !Player.hasHarvested)
             {
-                print("Harvesting...");
                 StartCoroutine(CropGrowing());
             }
             else if (cropsAreReady && !Player.hasHarvested)
@@ -39,19 +43,23 @@ public class Plot : MonoBehaviour
                 cropIndex = 0;
                 inventory.currentCropImage.enabled = true;
 
-                switch (cropToHarvest)
+                switch (cropType)
                 {
-                    case Crop.Strawberry:
-                        inventory.currentCropImage.sprite = inventory.cropSprites[0];
+                    case (Crop.Strawberry):
+                        inventory.crops[0].cropAmount++;
+                        inventory.currentCropImage.sprite = inventory.crops[0].cropSprite;
                         break;
-                    case Crop.Potato:
-                        inventory.currentCropImage.sprite = inventory.cropSprites[1];
+                    case (Crop.Potato):
+                        inventory.crops[1].cropAmount++;
+                        inventory.currentCropImage.sprite = inventory.crops[1].cropSprite;
                         break;
-                    case Crop.Eggplant:
-                        inventory.currentCropImage.sprite = inventory.cropSprites[2];
+                    case (Crop.Eggplant):
+                        inventory.crops[2].cropAmount++;
+                        inventory.currentCropImage.sprite = inventory.crops[2].cropSprite;
                         break;
                 }
 
+                inventory.UpdateText();
                 Player.hasHarvested = true;
                 cropsAreReady = false;
                 plotSprite.sprite = null;

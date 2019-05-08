@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Cropcrafting
   m_EditorClassIdentifier: 
   questName: Cropcrafting
-  questDescription: My friends always found it strange that I liked raw rice, I don't
-    care. Bring me some rice!
-  crop: 1
-  amountToHarvest: 3
-  questCompleted: 0
+  questDescription: Im hungry, bring me 3 strawberries!
+  cropsToTurnIn:
+  - cropType: 0
+    amount: 3
+  - cropType: 1
+    amount: 0
+  - cropType: 2
+    amount: 0
+  questCompleted: 1

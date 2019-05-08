@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: SpiritsAssistant
   m_EditorClassIdentifier: 
   questName: Spirit's Assistant
-  questDescription: I am very hungry so I want you to bring me 3 delicious strawberries!
-  crop: 0
-  amountToHarvest: 3
+  questDescription: My eating habits are wierd so I would like 2 egglants!
+  cropsToTurnIn:
+  - cropType: 0
+    amount: 0
+  - cropType: 1
+    amount: 0
+  - cropType: 2
+    amount: 2
   questCompleted: 0

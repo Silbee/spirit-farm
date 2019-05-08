@@ -22,12 +22,6 @@ public class Spirit : MonoBehaviour
             Player.hasHarvested = false;
             inventory.currentCropImage.enabled = false;
             audioSource.Play();
-            Player.foodPoints++;
-
-            if(Player.foodPoints >= 5)
-            {
-                print("Game has been won.");
-            }
         }
     }
 }

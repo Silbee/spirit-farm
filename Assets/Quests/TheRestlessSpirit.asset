@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: TheRestlessSpirit
   m_EditorClassIdentifier: 
   questName: The Restless Spirit
-  questDescription: My brother wants to rest, but he can't without some potatoes!
-    Bring him 5 potatoes.
-  crop: 2
-  amountToHarvest: 5
+  questDescription: My brother wants to rest, but he can't without some potatoes,
+    bring me 5 potatoes!
+  cropsToTurnIn:
+  - cropType: 0
+    amount: 0
+  - cropType: 1
+    amount: 5
+  - cropType: 2
+    amount: 0
   questCompleted: 0

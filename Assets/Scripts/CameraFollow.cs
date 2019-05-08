@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
 
     Vector2 velocity;
 
-    void Update()
+    void LateUpdate()
     {
         transform.position = Vector2.SmoothDamp(transform.position, new Vector2(playerPosition.transform.position.x, playerPosition.transform.position.y) + offset, ref velocity, smoothTime);
     }
