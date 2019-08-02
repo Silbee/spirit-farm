@@ -13,6 +13,8 @@ public class GameHandler : MonoBehaviour
         {
             quest.questCompleted = false;
         }
+
+        Application.targetFrameRate = 60;
     }
 
 
