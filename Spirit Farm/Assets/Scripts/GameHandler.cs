@@ -14,7 +14,7 @@ public class GameHandler : MonoBehaviour
             quest.questCompleted = false;
         }
 
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 65;
     }
 
 
